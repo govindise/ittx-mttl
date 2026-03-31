@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Tennis Tournament Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Table Tennis Tournament Planner</h1>
+      <p>
+        Create groups of 3 players, record match winners, and automatically qualify players into
+        Level 1 and Level 2 knockout brackets.
+      </p>
+
+      <section class="card">
+        <h2>1) Add Players</h2>
+        <textarea
+          id="playersInput"
+          rows="8"
+          placeholder="Enter one player per line&#10;Example:&#10;Ava&#10;Liam&#10;Noah"
+        ></textarea>
+        <div class="controls">
+          <label>
+            Tournament title
+            <input id="tournamentName" type="text" value="Club Championship" />
+          </label>
+          <button id="generateBtn">Generate Groups</button>
+        </div>
+        <p id="validationMsg" class="msg"></p>
+      </section>
+
+      <section id="groupsSection" class="card hidden">
+        <h2>2) Group Stage (Groups of 3)</h2>
+        <div id="groupsContainer"></div>
+        <button id="buildKnockoutBtn">Build Knockout Brackets</button>
+      </section>
+
+      <section id="knockoutSection" class="card hidden">
+        <h2>3) Knockout Brackets</h2>
+        <h3>Level 1 (Top 2 from each group)</h3>
+        <div id="level1Bracket"></div>
+
+        <h3>Level 2 (Remaining players)</h3>
+        <div id="level2Bracket"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
